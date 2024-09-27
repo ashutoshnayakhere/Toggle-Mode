@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+transition: 1.5s;
+}
+.night-toggle {
+width: 33px;
+height: 33px;
+right: 20px;
+top: 20px;
+position: absolute;
+}
+.night-toggle:hover{
+  cursor: pointer;
+}
+.moon {
+  background-color: transparent;
+  box-shadow: -6px 1px 0 3px #275e8e;
+  border-left:3px solid #27476D;
+  border-radius:50%;
+  width: 20px;
+  height: 20px;
+  margin-left:8px;
+  margin-top:0px;
+  transition: 2s;
+}
+.sun {
+  background-color: #fdd462;
+  box-shadow: 2px 0px 0px 1px #D19C29;
+  border-radius:50%;
+  width: 26px;
+  height: 26px;
+  transition: 2s;
+}
+
+/* ----- optional ----- */
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+.opt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  font-family: sans-serif;
+  margin-top:5%;
+  text-align:center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="night-toggle" onClick="switchMode()">
+        <div id="moon" class="moon"></div>
+      </div>
+      
+      <!-- optional -->
+      <div class="opt">
+        <div><h1>Night/Day Mode Toggle</h1></div>
+        <div class="break"></div>
+        <div><p>Click on the moon in the upper-right corner to change to night mode.</p>
+          <p>Click again on the sun to change back to day mode.</p></div>
+      </div>
+
+      <script>
+        function switchMode() {
+  let moon = document.getElementById ("moon");
+    if(moon.className=="moon"){
+      moon.className="sun";
+      document.body.style.backgroundColor = "#141D26";
+      document.body.style.color = "#fff";
+    }
+  else {
+    moon.className ="moon";
+    document.body.style.backgroundColor = "#fff";
+    document.body.style.color = "#000";
+  }
+}
+
+      </script>
+</body>
+
+</html>
